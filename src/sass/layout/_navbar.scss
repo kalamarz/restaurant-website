@@ -1,0 +1,62 @@
+.navbar {
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 35px 40px;
+
+    &__logo {
+        color: $colorMain;
+        font-family: "Indie Flower";
+        font-size: 26px;
+        font-weight: 700;
+        margin-left: 19px;
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        max-width: 1127px;
+        width: 100%;
+        justify-content: flex-end;
+
+        &-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover:before {
+                transform: scale(1);
+            }
+
+            &:before {
+                content: '';
+                width: 33px;
+                height: 33px;
+                border-radius: 50%;
+                background-color: $colorDarkRed;
+                position: absolute;
+                z-index: -1;
+                transform: scale(0);
+                transition: all .2s ease-in-out;
+            }
+        }
+       
+        &-link {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $colorMain;
+            text-decoration: none;
+            padding: 0 20px;
+        }
+    }
+}
+
+.fa-shopping-bag {
+    margin-left: auto;
+    cursor: pointer;
+}
+

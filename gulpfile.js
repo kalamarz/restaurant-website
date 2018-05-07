@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
@@ -35,7 +35,7 @@ gulp.task('sass', function(){
 });
 
 
-gulp.task('scripts', function(){
+gulp.task('uglify', function(){
     gulp.src('src/js/*.js')
         .pipe(concat('main.js'))
         .pipe(uglify())
@@ -50,7 +50,7 @@ gulp.task('serve', ['sass'], function() {
     });
 
     gulp.watch(['src/sass/**/*.scss'], ['sass']);
-    gulp.watch('src/js/*.js', ['scripts']);
+    gulp.watch('src/js/*.js', ['uglify']);
     gulp.watch('src/images/*', ['imageMin']);
     gulp.watch("src/*.html",['copyHtml']).on('change', browserSync.reload);
 });

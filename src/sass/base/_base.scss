@@ -1,0 +1,14 @@
+body {
+    box-sizing: border-box;
+    background-color: $colorBackground;
+    color: $colorMain;
+    font-family: "Open Sans";
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
