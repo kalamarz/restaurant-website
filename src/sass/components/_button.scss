@@ -1,0 +1,18 @@
+.button {
+    border-radius: 25px;
+    padding: 15px 38px;
+    border: transparent;
+    color: $colorMain;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+
+    &--main {
+        background-color: $colorDarkRed;
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border: 2px solid $colorDarkRed;
+    }
+}

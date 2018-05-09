@@ -6,6 +6,7 @@ const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
+const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 
 
@@ -37,6 +38,7 @@ gulp.task('sass', function(){
 
 gulp.task('uglify', function(){
     gulp.src('src/js/*.js')
+        .pipe(plumber())
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
