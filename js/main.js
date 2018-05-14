@@ -1,1 +1,1 @@
-"use strict";let slideIndex=0;function showSlides(){let e;const l=document.querySelectorAll(".slider__container");for(e=0;e<l.length;e++)l[e].style.display="none";++slideIndex>l.length&&(slideIndex=1),l[slideIndex-1].style.display="flex",setTimeout(showSlides,6e3)}showSlides();
+"use strict";let slideIndex=0;function showSlides(){const e=document.querySelectorAll(".slider__container");let l;for(l=0;l<e.length;l++)e[l].style.display="none";++slideIndex>e.length&&(slideIndex=1),e[slideIndex-1].style.display="flex",setTimeout(showSlides,6e3)}showSlides();
