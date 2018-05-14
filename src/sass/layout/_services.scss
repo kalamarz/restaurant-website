@@ -1,0 +1,78 @@
+.services {
+    @include container;
+    padding-top: 100px;
+  
+    &__heading {
+        text-align: center;
+        font-size: 3.25rem;
+        font-family: "Indie Flower";
+        font-weight: 400;
+    }
+
+    &__paragraph {
+        text-align: center;
+        font-size: 1em;
+        max-width: 65%;
+        margin: auto;
+        color: $colorGrey;
+        line-height: 30px;
+    }
+    
+    &__gallery {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        &-item {
+            display: flex;
+            transition: transform .5s;
+
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
+                transform: scale3d(1.05, 1.05, 1);
+            }
+        }
+    }
+
+    &__middle-photo {
+        padding-top: 40px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        border-radius: 50%;
+
+        &--right {
+            order: 1;
+            margin-left: 54px;
+        }
+
+        &--left {
+            margin-right: 54px;
+        }
+
+        &-heading {
+            font-family: "Indie Flower";
+            font-size: 1.3em;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        &-caption {
+            color: $colorGrey;
+        }
+    }
+}
