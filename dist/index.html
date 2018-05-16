@@ -72,7 +72,7 @@
 				<img class="about__photo-pizza" src="images/about-pizza.png" alt="pizza">
 			</div>
 			<div class="about__text">
-				<h1 class="about__heading">Welcome to Restaurant</h1>
+				<h1 class="heading heading--secondary">Welcome to Restaurant</h1>
 				<p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
@@ -169,6 +169,64 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- ORDER -->
+
+	<section class="order">
+		<h2 class="heading heading--main">Order now</h2>
+		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+		<div class="order__container">
+			<div class="order__open">
+				<h3 class="heading heading--secondary">Time</h3>
+				<p class="order__subtitle">Open</p>
+				<p class="order__day">monday-friday</p>
+				<p class="order__hours">8am - 11am (breakfast)<br>11am - 10pm (lunch/dinner)</p>
+				<p class="order__day">Saturday/sunday</p>
+				<p class="order__hours">8am - 11am (breakfast)<br>11am - 10pm (lunch/dinner)</p>
+			 </div>
+			<div class="order__reservation">
+				<h3 class="heading heading--secondary">Reservation</h3>
+				<p class="order__subtitle">online booking</p>
+				<form action="#" class="form">
+					<div class="form__group">
+						<select class="form__select" name="people">
+							<option value="party">Party Size</option>
+							<option value="one">One Person</option>
+							<option value="two">2 People</option>
+							<option value="three">3 People</option>
+							<option value="four">4 People</option>
+							<option value="five">5 People</option>
+							<option value="six">6 People</option>
+							<option value="seven">7 People</option>
+						</select>
+					</div>
+					<div class="form__group">
+						<input type="time" class="form__input" placeholder="Time" id="time" required>
+						<label for="time" class="form__label">Time*</label>
+					</div>
+					<div class="form__group">
+						<input type="date" class="form__input" placeholder="Date" id="date" required>
+						<label for="date" class="form__label">Date*</label>
+					</div>
+					<div class="form__group">
+						<input type="text" class="form__input" placeholder="Full name" id="name" required>
+						<label for="name" class="form__label">Full Name*</label>
+					</div>
+					<div class="form__group">
+						<input type="tel" class="form__input" placeholder="Phone" id="phone">
+						<label for="phone" class="form__label">Phone</label>
+					</div>
+					<div class="form__group">
+						<input type="email" class="form__input" placeholder="Email" id="email" required>
+						<label for="email" class="form__label">Email*</label>
+					</div>
+				</form>
+				<button class="button button--main">book now</button>
+				<p class="form__info">*These fields are required.</p>
+			</div>
+		</div>
+	</section>
+
 
 	<script src="js/main.js"></script>
 </body>
