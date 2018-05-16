@@ -18,5 +18,3 @@ function showSlides() {
 }
 showSlides();
 
-
-
