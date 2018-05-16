@@ -1,0 +1,79 @@
+.footer {
+    @include container;
+   
+    &__content {
+        display: flex;
+        padding-top: 74px;
+        justify-content: space-between;      
+    }
+
+    &__logo {
+        font-family: "Indie Flower";
+        font-weight: 700;
+        font-size: 1.6rem;
+        padding-bottom: 43px;
+    }
+
+    &__restaurant {
+       max-width: 420px;
+    }
+    
+    &__img {
+        float: left;
+        margin-right: 19px;
+    }
+
+    &__list {
+        list-style: none;
+        
+        &-menu {
+            padding: 5px 0;
+            color: $colorGrey;
+        }
+    }
+
+    &__text {
+        line-height: 30px;
+        color: $colorGrey;
+    }
+
+    &__heading {
+        padding-bottom: 40px;
+        font-family: "Indie Flower";
+        font-size: 1.125em;
+    }
+
+    &__copyright {
+        display: flex;
+        padding: 50px 0;
+        justify-content: space-between;
+    }
+
+    &__socials {
+        max-width: 190px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &-link {
+            color: $colorMain;
+        }
+
+        &-icon {
+            cursor: pointer;
+            transition: all .2s;
+
+            &:hover {
+                color: $colorDarkRed;
+                transform: scale(1.5);  
+            }
+        }
+    }
+}
+
+.fa-phone,
+.fa-location-arrow,
+.fa-envelope {
+    color: $colorDarkRed;
+    margin-right: 20px;
+}
