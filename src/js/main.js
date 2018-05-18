@@ -18,3 +18,15 @@ function showSlides() {
 }
 showSlides();
 
+
+window.addEventListener('scroll', fixedNavbar);
+function fixedNavbar() {
+    const navbar = document.querySelector('.navbar');
+    const navTop = navbar.offsetTop;
+    
+    if (window.scrollY >= navTop + 1) {
+        navbar.classList.add('navbar--fixed');
+    } else {
+        navbar.classList.remove('navbar--fixed');
+    }
+}

@@ -5,6 +5,14 @@
     display: flex;
     align-items: center;
     padding: 35px 40px;
+    transition: all .5s;
+
+    &--fixed {
+        position: fixed; 
+        z-index: 1;
+        padding: 8px 40px;
+        background-color: rgba(0, 0, 0, 0.8);    
+    }
 
     &__logo {
         color: $colorMain;
@@ -53,10 +61,10 @@
             padding: 0 20px;
         }
     }
-}
 
-.fa-shopping-bag {
-    margin-left: auto;
-    cursor: pointer;
+    &__icon {
+        margin-left: auto;
+        cursor: pointer;
+        color: $colorMain;
+    }
 }
-
