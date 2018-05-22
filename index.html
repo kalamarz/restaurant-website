@@ -14,16 +14,18 @@
 	<!-- NAVBAR-->
 
 	<nav class="navbar">
-		<img src="images/logo.png" alt="logo" class="navbar__img">
-		<span class="navbar__logo">Restaurant</span>
-		<ul class="navbar__menu">
-			<li class="navbar__menu-item"><a href="#home" class="navbar__menu-link">home</a></li>
-			<li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">about</a></li>
-			<li class="navbar__menu-item"><a href="#menu" class="navbar__menu-link">menu</a></li>
-			<li class="navbar__menu-item"><a href="#pages" class="navbar__menu-link">pages</a></li>
-			<li class="navbar__menu-item"><a href="#contact" class="navbar__menu-link">contact</a></li>
-		</ul>
-		<a class="navbar__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+		<div class="navbar__wrapper">
+			<img src="images/logo.png" alt="logo" class="navbar__img">
+			<span class="navbar__logo">Restaurant</span>
+			<ul class="navbar__menu">
+				<li class="navbar__menu-item navbar__menu-item--active"><a href="#home" class="navbar__menu-link">home</a></li>
+				<li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">about</a></li>
+				<li class="navbar__menu-item"><a href="#menu" class="navbar__menu-link">menu</a></li>
+				<li class="navbar__menu-item"><a href="#pages" class="navbar__menu-link">pages</a></li>
+				<li class="navbar__menu-item"><a href="#contact" class="navbar__menu-link">contact</a></li>
+			</ul>
+			<a class="navbar__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+		</div>
 	</nav>
 
 	<!-- SLIDER-->
@@ -142,7 +144,7 @@
 
 	<!-- MENU -->
 
-	<section class="section-menu">
+	<section class="section-menu" id="menu">
 		<h2 class="heading heading--main">Menu</h2>
 		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
@@ -545,7 +547,7 @@
 	</section>
 
 	<!-- GALLERY -->
-	<div class="gallery">
+	<div class="gallery" id="contact">
 		<img src="images/gallery1.png" alt="sandwiches" class="gallery__image">
 		<img src="images/gallery2.png" alt="french pastry" class="gallery__image">
 		<img src="images/gallery3.png" alt="burger" class="gallery__image">
@@ -554,7 +556,7 @@
 
 	<!--FOOTER -->
 	
-	<footer class="footer" id="contact">
+	<footer class="footer">
 		<div class="footer__content">
 			<div class="footer__restaurant">
 				<img src="images/logo.png" alt="logo" class="footer__img">
@@ -602,6 +604,7 @@
 		</div>
 	</footer>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
