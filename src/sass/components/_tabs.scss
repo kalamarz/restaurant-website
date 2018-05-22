@@ -1,0 +1,94 @@
+.section-menu {
+    background-image: url('../images/menubg1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 80px;
+}
+    .tabs {
+    @include container;
+    max-width: 920px;
+
+    &__content {
+        display: none;
+        animation: fadeTabs 1s;
+
+        &--active {
+            display: flex;
+        }
+    }
+    
+    &__menu {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        font-weight: 700;
+        text-decoration: underline;
+        text-transform: uppercase;
+        padding: 70px 0;
+        max-width: 570px;
+        width: 100%;
+        cursor: pointer;
+
+        &-link {
+            color: $colorMain;
+        }
+    }
+
+    &__dishes {
+        list-style: none;
+        column-count: 2;
+        width: 100%;
+ 
+        &-name {
+            font-family: "Indie Flower";
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            &:after {
+                content:'';
+                display: flex;
+                align-self: flex-end;
+                flex: 1;
+                background-color: $colorMain;
+                height: 1px;
+            }
+        }
+
+        &-price {
+            font-family: "Open Sans";
+            font-weight: 700;
+            display: flex;
+            order: 1;
+        }
+
+        &-ingr {
+            font-size: 0.75em;
+            word-spacing: 1em;
+            padding-top: 5px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 26px;
+        width: 100%;
+    }
+
+    &__item {
+        display: flex;
+        padding: 27px 0;
+    }
+
+    &__image {
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
