@@ -4,12 +4,18 @@
     justify-content: center;
     padding: 35px 40px;
     transition: padding .5s;
+    @include breakpoint(xs) {
+        padding: 1rem;
+    }
 
     &--fixed {
         position: fixed; 
         z-index: 1;
         padding: 8px 40px;
-        background-color: rgba(0, 0, 0, 0.8);    
+        background-color: rgba(0, 0, 0, 0.8);
+        @include breakpoint(xs) {
+            padding: 1rem;
+        }
     }
 
     &__wrapper {
@@ -17,12 +23,15 @@
         width: 100%;
         display: flex;
         align-items: center;
+        @include breakpoint(s) {
+            flex-wrap: wrap;
+        }
     }
 
     &__logo {
         color: $colorMain;
         font-family: "Indie Flower";
-        font-size: 26px;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-left: 19px;
     }
@@ -33,12 +42,25 @@
         max-width: 1127px;
         width: 100%;
         justify-content: flex-end;
+        @include breakpoint(s) {
+            flex-direction: column;
+            order: 1;
+            align-items: flex-end;
+
+            &--hidden {
+                display: none;
+            }
+        }
 
         &-item {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            @include breakpoint(s) {
+               padding: 0.8rem 0;
+               font-size: 1.2em;
+            }
 
             &:before {
                 content: '';
@@ -58,7 +80,7 @@
         }
        
         &-link {
-            font-size: 14px;
+            font-size: 0.87em;
             font-weight: 700;
             text-transform: uppercase;
             color: $colorMain;
@@ -71,5 +93,19 @@
         margin-left: auto;
         cursor: pointer;
         color: $colorMain;
+    }
+
+    &__toggler {
+        font-size: 1.5em;
+        color: $colorMain;
+        background-color: transparent;
+        border: 1px solid $colorMain;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 0 20px;
+        display: none;  
+        @include breakpoint(s) {
+            display: flex;
+        }
     }
 }

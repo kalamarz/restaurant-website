@@ -6,20 +6,14 @@
         justify-content: space-around;
         padding-top: 70px;
         padding-bottom: 120px;
-    }
-
-    &__title {
-        font-family: "Indie Flower";
-        font-size: 1.3em;
-        text-transform: uppercase;
-        font-weight: 700;
-        padding: 25px 0;
+        flex-wrap: wrap;
+        @include breakpoint(s) {
+            padding-bottom: 20px;
+        }
     }
     
-    &__text {
-        color: $colorGrey;
-        line-height: 30px;
-
+    &__paragraph {
+        padding-bottom: 0;
         &:after {
             content: "";
             display: block;
@@ -37,6 +31,7 @@
     &__card {
         max-width: 305px;
         overflow: hidden;
+        padding-bottom: 40px;
 
         &:hover .news__image{
             transform: scale(1.1);
@@ -46,6 +41,21 @@
     &__link {
         color: $colorMain;
         text-decoration: none;
+        transition: color .2s;
+   
+        &:hover {
+            color: $colorDarkRed;
+        }
+
+        &-arrow {
+            margin-left: 5px;
+            display: none;
+        }
+        
+        &:hover .news__link-arrow{
+            display: initial;
+            color: $colorDarkRed;
+        }
     }
 
     &__info {

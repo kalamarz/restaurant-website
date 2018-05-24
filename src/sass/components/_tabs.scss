@@ -5,7 +5,8 @@
     background-size: cover;
     padding-bottom: 80px;
 }
-    .tabs {
+
+.tabs {
     @include container;
     max-width: 920px;
 
@@ -33,6 +34,11 @@
 
         &-link {
             color: $colorMain;
+            transition: color 1s;
+
+            &:focus {
+                color: $colorDarkRed;
+            }
         }
     }
 
@@ -40,6 +46,11 @@
         list-style: none;
         column-count: 2;
         width: 100%;
+        @include breakpoint(m) {
+            column-count: 1;
+            width: 80%;
+            margin: auto;
+        }
  
         &-name {
             font-family: "Indie Flower";
@@ -47,6 +58,10 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            @include breakpoint(xs){
+                flex-direction: column;
+                font-size: 1.2em;
+            }
 
             &:after {
                 content:'';

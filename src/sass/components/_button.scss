@@ -1,18 +1,31 @@
 .button {
     border-radius: 25px;
     padding: 15px 38px;
-    border: transparent;
+    border: 2px solid transparent;
     color: $colorMain;
     font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: all .4s;
 
     &--main {
         background-color: $colorDarkRed;
+        
+        &:hover {
+            background-color: transparent;
+            color: $colorDarkRed;
+            border: 2px solid $colorDarkRed;
+        }
     }
 
     &--transparent {
         background-color: transparent;
         border: 2px solid $colorDarkRed;
+          
+        &:hover {
+            background-color: $colorDarkRed;
+            border: 2px solid $colorDarkRed;
+        }
     }
 }

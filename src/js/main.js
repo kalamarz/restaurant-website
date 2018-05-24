@@ -1,30 +1,5 @@
 'use strict'
 
-$(document).ready(function() {
-  
-    const scrollLink = $('.navbar__menu-link');
-    
-    scrollLink.click(function(e) {
-        e.preventDefault();
-        $('body,html').animate({
-            scrollTop: $(this.hash).offset().top
-        }, 1000 );
-    });
-
-    $(window).scroll(function() {
-
-        const scrollbarLocation = $(this).scrollTop();
-
-        scrollLink.each(function() {
-        const sectionOffset = $(this.hash).offset().top - 20;
-            if ( sectionOffset <= scrollbarLocation ) {
-                $(this).parent().addClass('navbar__menu-item--active');
-                $(this).parent().siblings().removeClass('navbar__menu-item--active');
-            }
-        });
-    });
-});
-
 window.addEventListener('scroll', fixedNavbar);
 function fixedNavbar() {
     const navbar = document.querySelector('.navbar');
@@ -32,10 +7,25 @@ function fixedNavbar() {
     
     if (window.scrollY >= navTop + 1) {
         navbar.classList.add('navbar--fixed'); 
+        document.querySelector('.slider').style.paddingTop = navbar.offsetHeight + "px";
     } else {
         navbar.classList.remove('navbar--fixed');
+        document.querySelector('.slider').style.paddingTop = 0;
     }
 }
+
+const toggleButton = document.querySelector('.navbar__toggler');
+const menuNav = document.querySelector('.navbar__menu');
+
+toggleButton.addEventListener('click', function(){
+    if (menuNav.classList.contains('navbar__menu--hidden')) {
+        menuNav.classList.remove('navbar__menu--hidden');
+        this.setAttribute('aria-expanded', 'true');
+    } else { 
+        menuNav.classList.add('navbar__menu--hidden'); 
+        this.setAttribute('aria-expanded', 'false');
+    }
+});
 
 
 let slideIndex = 0;
@@ -66,9 +56,36 @@ menuTabs.addEventListener('click', function(e){
     content.forEach(function(menu){
       if(menu == targetContent){
         menu.classList.add('tabs__content--active');
+        menu.setAttribute('aria-hidden', 'false');
       }else {
         menu.classList.remove('tabs__content--active');
+        menu.setAttribute('aria-hidden', 'true');
       }
     });
   }
+});
+
+$(document).ready(function() {
+  
+    const scrollLink = $('.navbar__menu-link');
+    
+    scrollLink.click(function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000 );
+    });
+
+    $(window).scroll(function() {
+
+        const scrollbarLocation = $(this).scrollTop();
+
+        scrollLink.each(function() {
+        const sectionOffset = $(this.hash).offset().top - 20;
+            if ( sectionOffset <= scrollbarLocation ) {
+                $(this).parent().addClass('navbar__menu-item--active');
+                $(this).parent().siblings().removeClass('navbar__menu-item--active');
+            }
+        });
+    });
 });

@@ -4,3 +4,15 @@
     padding: 0 1.9rem;
     margin: 0 auto;
 }
+
+@mixin breakpoint($point) {
+    @if $point == xs {
+        @media only screen and (max-width: 426px) { @content };    
+    }
+    @if $point == s {
+        @media only screen and (max-width: 768px ) { @content };    
+    }
+    @if $point == m {
+        @media only screen and (max-width: 962px ) { @content };    
+    }
+}
