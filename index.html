@@ -17,14 +17,15 @@
 		<div class="navbar__wrapper">
 			<img src="images/logo.png" alt="logo" class="navbar__img">
 			<span class="navbar__logo">Restaurant</span>
-			<ul class="navbar__menu">
+			<ul class="navbar__menu navbar__menu--hidden">
 				<li class="navbar__menu-item navbar__menu-item--active"><a href="#home" class="navbar__menu-link">home</a></li>
 				<li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">about</a></li>
 				<li class="navbar__menu-item"><a href="#menu" class="navbar__menu-link">menu</a></li>
 				<li class="navbar__menu-item"><a href="#pages" class="navbar__menu-link">pages</a></li>
 				<li class="navbar__menu-item"><a href="#contact" class="navbar__menu-link">contact</a></li>
 			</ul>
-			<a class="navbar__icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+			<a class="navbar__icon" href="#" aria-label="shopping cart"><i class="fas fa-shopping-bag"></i></a>
+			<button class="navbar__toggler" aria-label="navigation button" aria-expanded="false"><i class="fas fa-bars"></i></button>
 		</div>
 	</nav>
 
@@ -34,7 +35,7 @@
 	   <div class="slider__container">
 		   <div class="slider__text">
 				<h1 class="slider__heading">Delicious chicken wings with tomato</h1>
-				<p class="slider__paragraph">Lorem ipsum dolor sit amet, consectetur<br>adipisicing elit, sed do eiusmod tempor</p>
+				<p class="paragraph">Lorem ipsum dolor sit amet, consectetur<br>adipisicing elit, sed do eiusmod tempor</p>
 				<button class="button button--main">buy now</button>
 				<span class="slider__price">25$</span>
 			</div>
@@ -45,7 +46,7 @@
 		<div class="slider__container">
 			<div class="slider__text">
 				<h1 class="slider__heading">Healthy salad with fresh veggies</h1>
-				<p class="slider__paragraph">Ut enim ad minim veniam, quis nostrud<br>exercitation ullamco laboris nisi ut aliquip</p>
+				<p class="paragraph">Ut enim ad minim veniam, quis nostrud<br>exercitation ullamco laboris nisi ut aliquip</p>
 				<button class="button button--main">buy now</button>
 				<span class="slider__price">18$</span>
 			</div>
@@ -56,7 +57,7 @@
 		<div class="slider__container">
 			<div class="slider__text">
 				<h1 class="slider__heading">Sweet desserts made with love</h1>
-				<p class="slider__paragraph"> Duis aute irure dolor in reprehenderit<br> in voluptate velit esse cillum dolore eu fugiat</p>
+				<p class="paragraph"> Duis aute irure dolor in reprehenderit<br> in voluptate velit esse cillum dolore eu fugiat</p>
 				<button class="button button--main">buy now</button>
 				<span class="slider__price">10$</span>
 			</div>
@@ -71,11 +72,15 @@
 	<section class="about" id="about">
 		<div class="about__container">
 			<div class="about__photo">
-				<img class="about__photo-pizza" src="images/about-pizza.png" alt="pizza">
+				<picture>
+					<source media="(max-width: 962px)" srcset="images/about-pizza-m.png">
+					<source media="(min-width: 963px)" srcset="images/about-pizza.png">
+					<img class="about__photo-pizza" src="images/about-pizza.png" alt="pizza">
+				</picture>
 			</div>
 			<div class="about__text">
-				<h1 class="heading heading--secondary">Welcome to Restaurant</h1>
-				<p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+				<h2 class="heading heading--medium">Welcome to Restaurant</h2>
+				<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
 				<button class="button button--transparent">Read More</button>
@@ -86,8 +91,8 @@
 	<!--SERVICES-->
 
 	<section class="services">
-		<h2 class="heading heading--main">Our Services</h2>
-		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+		<h2 class="heading heading--large">Our Services</h2>
+		<p class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 		<div class="services__content">
 			<div class="services__gallery">
@@ -114,7 +119,11 @@
 				</div>
 			</div>
 			<div class="services__middle-photo">
-				<img src="images/chef-image-center.png" alt="">
+				<picture>
+					<source media="(max-width: 768px)" srcset="images/chef-image-center-small.png">
+					<source media="(min-width: 769px)" srcset="images/chef-image-center.png">
+					<img src="images/chef-image-center.png" alt="Chef">
+			  	</picture>
 			</div>
 			<div class="services__gallery">
 					<div class="services__gallery-item">
@@ -145,18 +154,18 @@
 	<!-- MENU -->
 
 	<section class="section-menu" id="menu">
-		<h2 class="heading heading--main">Menu</h2>
-		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+		<h2 class="heading heading--large">Menu</h2>
+		<p class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 		<div class="tabs">
-			<ul class="tabs__menu">
-				<li><a class="tabs__menu-link" data-tab="#fish" href="#">fish</a></li>
-				<li><a class="tabs__menu-link" data-tab="#pizza" href="#">pizza</a></li>
-				<li><a class="tabs__menu-link" data-tab="#burger" href="#">burger</a></li>
-				<li><a class="tabs__menu-link" data-tab="#cake" href="#">cake</a></li>
-				<li><a class="tabs__menu-link" data-tab="#drink" href="#">drink</a></li>
+			<ul class="tabs__menu" role="tablist">
+				<li><a class="tabs__menu-link" data-tab="#fish" href="#" role="tab">fish</a></li>
+				<li><a class="tabs__menu-link" data-tab="#pizza" href="#" role="tab">pizza</a></li>
+				<li><a class="tabs__menu-link" data-tab="#burger" href="#" role="tab">burger</a></li>
+				<li><a class="tabs__menu-link" data-tab="#cake" href="#" role="tab">cake</a></li>
+				<li><a class="tabs__menu-link" data-tab="#drink" href="#" role="tab">drink</a></li>
 			</ul>
-			<div class="tabs__content tabs__content--active" id="fish">
+			<div class="tabs__content tabs__content--active" id="fish" role="tabpanel">
 				<ul class="tabs__dishes">
 					<li class="tabs__item">
 						<img src="images/tabs-menu1.png" class="tabs__image" alt="fish">
@@ -216,7 +225,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="tabs__content" id="pizza">
+			<div class="tabs__content" id="pizza" role="tabpanel">
 				<ul class="tabs__dishes">
 					<li class="tabs__item">
 						<img src="images/pizza-menu1.png" class="tabs__image" alt="pizza">
@@ -276,7 +285,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="tabs__content" id="burger">
+			<div class="tabs__content" id="burger" role="tabpanel">
 				<ul class="tabs__dishes">
 					<li class="tabs__item">
 						<img src="images/sand-menu1.png" class="tabs__image" alt="burger">
@@ -336,7 +345,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="tabs__content" id="cake">
+			<div class="tabs__content" id="cake" role="tabpanel">
 				<ul class="tabs__dishes">
 					<li class="tabs__item">
 						<img src="images/cake-menu1.png" class="tabs__image" alt="cake">
@@ -396,7 +405,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="tabs__content" id="drink">
+			<div class="tabs__content" id="drink" role="tabpanel">
 				<ul class="tabs__dishes">
 					<li class="tabs__item">
 						<img src="images/drink-menu1.png" class="tabs__image" alt="drink">
@@ -462,29 +471,29 @@
 	<!--NEWS-->
 
 	<section class="news" id="pages">
-		<h2 class="heading heading--main">Latest News</h2>
-		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+		<h2 class="heading heading--large">Latest News</h2>
+		<p class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 		<div class="news__container">
 			<div class="news__card">
 				<img class="news__image" src="images/news-image1.png" alt="restaurant's kitchen">
-				<h3 class="news__title">Lorem ipsum dolor sit </h3>
-				<p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+				<h3 class="heading heading--small">Lorem ipsum dolor sit </h3>
+				<p class="paragraph news__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 				<span class="news__info">01 Jan
-				<a href="#" class="news__link">Read more</a></span>
+				<a href="#" class="news__link">Read more<span class="news__link-arrow">&#8594</span></a></span>
 			</div>
 			<div class="news__card">
 				<img class="news__image" src="images/news-image2.png" alt="dish on plate">
-				<h3 class="news__title">Lorem ipsum dolor sit </h3>
-				<p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+				<h3 class="heading heading--small">Lorem ipsum dolor sit </h3>
+				<p class="paragraph news__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 				<span class="news__info">01 Jan
-				<a href="#" class="news__link">Read more</a></span>
+				<a href="#" class="news__link">Read more<span class="news__link-arrow">&#8594</span></a></span>
 			</div>
 			<div class="news__card">
 				<img class="news__image" src="images/news-image3.png" alt="dish on plate">
-				<h3 class="news__title">Lorem ipsum dolor sit </h3>
-				<p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+				<h3 class="heading heading--small">Lorem ipsum dolor sit </h3>
+				<p class="paragraph news__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 				<span class="news__info">01 Jan
-				<a href="#" class="news__link">Read more</a></span>
+				<a href="#" class="news__link">Read more<span class="news__link-arrow">&#8594</span></a></span>
 			</div>
 		</div>
 	</section>
@@ -492,8 +501,8 @@
 	<!-- ORDER -->
 
 	<section class="order">
-		<h2 class="heading heading--main">Order now</h2>
-		<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+		<h2 class="heading heading--large">Order now</h2>
+		<p class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 		<div class="order__container">
 			<div class="order__open">
 				<h3 class="heading heading--secondary">Time</h3>
@@ -508,7 +517,7 @@
 				<p class="order__subtitle">online booking</p>
 				<form action="#" class="form">
 					<div class="form__group">
-						<select class="form__select" name="people">
+						<select class="form__select" aria-label="Choose party size" required>
 							<option value="party">Party Size</option>
 							<option value="one">One Person</option>
 							<option value="two">2 People</option>
@@ -520,23 +529,23 @@
 						</select>
 					</div>
 					<div class="form__group">
-						<input type="time" class="form__input" placeholder="Time" id="time" required>
+						<input type="time" class="form__input" id="time" required>
 						<label for="time" class="form__label">Time*</label>
 					</div>
 					<div class="form__group">
-						<input type="date" class="form__input" placeholder="Date" id="date" required>
+						<input type="date" class="form__input" id="date" required>
 						<label for="date" class="form__label">Date*</label>
 					</div>
 					<div class="form__group">
-						<input type="text" class="form__input" placeholder="Full name" id="name" required>
+						<input type="text" class="form__input" id="name" required>
 						<label for="name" class="form__label">Full Name*</label>
 					</div>
 					<div class="form__group">
-						<input type="tel" class="form__input" placeholder="Phone" id="phone">
+						<input type="tel" class="form__input" id="phone">
 						<label for="phone" class="form__label">Phone</label>
 					</div>
 					<div class="form__group">
-						<input type="email" class="form__input" placeholder="Email" id="email" required>
+						<input type="email" class="form__input" id="email" required>
 						<label for="email" class="form__label">Email*</label>
 					</div>
 				</form>
@@ -547,7 +556,7 @@
 	</section>
 
 	<!-- GALLERY -->
-	<div class="gallery" id="contact">
+	<div class="gallery">
 		<img src="images/gallery1.png" alt="sandwiches" class="gallery__image">
 		<img src="images/gallery2.png" alt="french pastry" class="gallery__image">
 		<img src="images/gallery3.png" alt="burger" class="gallery__image">
@@ -556,23 +565,21 @@
 
 	<!--FOOTER -->
 	
-	<footer class="footer">
+	<footer class="footer" id="contact">
 		<div class="footer__content">
 			<div class="footer__restaurant">
 				<img src="images/logo.png" alt="logo" class="footer__img">
 				<h4 class="footer__logo">Restaurant</h4>
-				<p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+				<p class="paragraph footer__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
 			</div>
-			<div class="footer__item">
+			<div class="footer__item footer__item--middle">
 				<h5 class="footer__heading">Category</h5>
 				<ul class="footer__list">
 					<li class="footer__list-menu">Food</li>
 					<li class="footer__list-menu">Fastfood</li>
 					<li class="footer__list-menu">Drink</li>
 				</ul>
-			</div>
-			<div class="footer__item">
 				<h5 class="footer__heading">Menu</h5>
 				<ul class="footer__list">
 					<li class="footer__list-menu">Pizza</li>
@@ -593,12 +600,12 @@
 			<div class="footer__copyright-container">
 				<p class="footer__text">Copyrights templates-free.co</p>
 				<div class="footer__socials">
-					<a href="#" class="footer__socials-link"><i class="fab fa-facebook-f footer__socials-icon"></i></a>
-					<a href="#" class="footer__socials-link"><i class="fab fa-behance footer__socials-icon"></i></a>
-					<a href="#" class="footer__socials-link"><i class="fab fa-twitter footer__socials-icon"></i></a>
-					<a href="#" class="footer__socials-link"><i class="fab fa-instagram footer__socials-icon"></i></a>
-					<a href="#" class="footer__socials-link"><i class="fab fa-pinterest footer__socials-icon"></i></a>
-					<a href="#" class="footer__socials-link"><i class="fab fa-dribbble footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our facebook profile"><i class="fab fa-facebook-f footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our behance profile"><i class="fab fa-behance footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our twitter profile"><i class="fab fa-twitter footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our instagram profile"><i class="fab fa-instagram footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our pinterest profile"><i class="fab fa-pinterest footer__socials-icon"></i></a>
+					<a href="#" class="footer__socials-link" aria-label="view our dribbble profile"><i class="fab fa-dribbble footer__socials-icon"></i></a>
 				</div>
 			</div>
 		</div>
